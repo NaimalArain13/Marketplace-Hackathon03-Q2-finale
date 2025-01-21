@@ -1,0 +1,6 @@
+Documentation of all days is organized in the google drive.
+
+Why do I paste the drive link?
+when I was trying to push the code to the github so github rejected the request because of large file sizes so that's why I upload the documentation on drive and share the link here.
+
+https://drive.google.com/drive/folders/1G3d-3X7j1bwjpsaUIHpU0i8o8D_qdzKD?usp=sharing
