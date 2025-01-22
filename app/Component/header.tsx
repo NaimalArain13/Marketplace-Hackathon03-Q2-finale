@@ -150,12 +150,12 @@ export default function Navbar() {
 
           {/* Icons and Login Section */}
           <div className="flex flex-col items-center gap-4 mt-6">
+            
+            {/* <p className="text-lg font-medium">Login / Register</p> */}
+            <div className="flex gap-6">
             <Link href={"/account"}>
             <UserPen size={22} />
             </Link>
-            {/* <p className="text-lg font-medium">Login / Register</p> */}
-            <div className="flex gap-6">
-              
 
               <div className="relative">
                 <Link href={"/shop/wishlist/cart"}>
