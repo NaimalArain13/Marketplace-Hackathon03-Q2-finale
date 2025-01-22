@@ -53,9 +53,7 @@ export default function Navbar() {
             <UserPen size={22} className="hidden md:block" />
           </Link>
           <div className="md:flex hidden gap-4">
-            <div>
-              <IoIosSearch size={30} />
-            </div>
+           
             <div className="relative">
               <Link href={"/shop/wishlist"}>
                 <CiHeart size={30} />
@@ -152,10 +150,12 @@ export default function Navbar() {
 
           {/* Icons and Login Section */}
           <div className="flex flex-col items-center gap-4 mt-6">
+            <Link href={"/account"}>
             <UserPen size={22} />
+            </Link>
             {/* <p className="text-lg font-medium">Login / Register</p> */}
             <div className="flex gap-6">
-              <IoIosSearch size={24} />
+              
 
               <div className="relative">
                 <Link href={"/shop/wishlist/cart"}>
