@@ -17,7 +17,7 @@ function BreadCrumb({
   route3?: string;
 }) {
   return (
-    <div className="hidden sm:flex">
+    <div className="hidden py-3 sm:flex">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

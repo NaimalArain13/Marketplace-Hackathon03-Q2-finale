@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Cart, useCart } from "../../context/cartContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { IoIosArrowDown } from "react-icons/io";
+import { FaAngleDoubleLeft } from "react-icons/fa";
 
 export default function SingleProductCard({ product }: { product: Cart }) {
   const { addToCart, addToWishlist } = useCart();
@@ -20,23 +20,10 @@ export default function SingleProductCard({ product }: { product: Cart }) {
   const handleWishlist = () => {
     addToWishlist(product);
   };
-
-  // const handleDecrement = () => {
-  //   if (product._id) {
-  //     decrementQuantity(product._id);
-  //   }
-  // };
-
-  // const handleIncrement = () => {
-  //   if (product._id) {
-  //     incrementQuantity(product._id);
-  //   }
-  // };
-
   return (
     <div className="flex flex-col md:flex-row justify-start items-start gap-6 p-6 md:p-12 bg-white shadow-lg rounded-lg">
       <div onClick={()=>{router.back()}}>
-        <IoIosArrowDown size={42}/>
+        <FaAngleDoubleLeft size={42}/>
       </div>
       {/* Left Section - Product Images */}
       <div className="md:w-1/2 w-full flex flex-col items-center">

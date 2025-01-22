@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import BreadCrumb from "../../../../Component/breadcrumb";
 import { useRouter } from "next/navigation";
 import TopSection from "@/app/Component/productListPage/productTop";
-import Navbar from "@/app/Component/header";
 import { useCart } from "@/app/context/cartContext";
 import CartTable from "@/app/Component/cart/cartItem";
 
@@ -24,7 +23,6 @@ export default function Cart() {
   return (
     <>
     <TopSection />
-    <Navbar />
     <div className="max-w-7xl w-full mx-auto p-7">
      <BreadCrumb route1={"Contact"}/>
 

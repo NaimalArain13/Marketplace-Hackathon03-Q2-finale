@@ -5,8 +5,8 @@ import JustForYou from "../../../Component/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
-import Navbar from "@/app/Component/header";
 import { useCart } from "@/app/context/cartContext";
+import Navbar from "@/app/Component/header";
 
 
 
