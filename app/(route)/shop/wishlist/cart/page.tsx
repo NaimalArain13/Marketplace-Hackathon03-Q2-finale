@@ -13,18 +13,22 @@ import TopSection from "@/app/Component/productListPage/productTop";
 import { useCart } from "@/app/context/cartContext";
 import CartTable from "@/app/Component/cart/cartItem";
 import Navbar from "@/app/Component/header";
+import { useEffect, useState } from "react";
 
 
 export default function Cart() {
   const {totalPrice} = useCart()
+  const [subTotal, setSubtotal]=useState(0)
   const router = useRouter()
- 
+ useEffect(()=>{
+  setSubtotal(totalPrice)
+ },[totalPrice])
   return (
     <>
     <TopSection />
     <Navbar />
     <div className="max-w-7xl w-full mx-auto p-7">
-     <BreadCrumb route1={"Contact"}/>
+     <BreadCrumb route1={"shop"} route1Link="/productListing" route2="cart" route2Link="/shop/wishlist/cart"/>
 
       {/* Table section */}
      <CartTable />
@@ -56,7 +60,7 @@ export default function Cart() {
               <CardContent className="space-y-6">
                 <div className="flex items-center justify-between border-b pb-2 border-gray-300">
                   <p>subtotal:</p>
-                  <p>${totalPrice}</p>
+                  <p>${subTotal}</p>
                 </div>
                 <div className="flex items-center justify-between border-b pb-2 border-gray-300">
                   <p>Shipping:</p>
@@ -64,7 +68,7 @@ export default function Cart() {
                 </div>
                 <div className="flex items-center justify-between border-b pb-2 border-gray-300">
                   <p>Total:</p>
-                  <p>${totalPrice}</p>
+                  <p>${subTotal}</p>
                 </div>
               </CardContent>
               <CardFooter className="flex justify-center">

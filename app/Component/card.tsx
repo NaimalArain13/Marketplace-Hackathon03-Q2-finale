@@ -105,7 +105,7 @@ export default function JustForYou({
           <span className="text-gray-600">({ratingCount} reviews)</span>
         </div>
 
-        <div className="flex justify-between items-center text-sm text-gray-500 mt-3">
+        <div className="flex flex-col items-start text-sm text-gray-500 mt-3">
           <p>
             Brand: <span className="font-medium text-gray-800">{brand}</span>
           </p>

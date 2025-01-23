@@ -4,10 +4,22 @@ import Link from "next/link";
 import CartRow from "../cartRow";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function CartTable() {
   const router = useRouter();
   const { cart, clearCart } = useCart();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // This ensures the component is only rendered on the client side
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Or return a loading state if needed
+  }
+
   console.log("this is cart from cartItem component", cart);
  
 

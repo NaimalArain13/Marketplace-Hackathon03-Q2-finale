@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LoadingAnimation from "../homepage/loadingAnimation";
 import BreadCrumb from "../breadcrumb";
+import Logos from "./logos";
 function Shop() {
   const [product, setProduct] = useState<WatchesXPerfumes[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,7 +42,7 @@ function Shop() {
     <div className="bg-Primary space-y-4">
       {/* section one */}
       <div className="flex flex-col gap-4 items-start  md:px-9">
-        <BreadCrumb route1="Shop" />
+        <BreadCrumb route1="Shop" route1Link="/productListing"/>
         <div className="flex justify-between items-center py-3">
           <h1 className="font-medium text-xl">Shop</h1>
         </div>
@@ -100,56 +101,7 @@ function Shop() {
       {/* section three */}
       <div className="flex flex-col gap-5 md:flex-row justify-between p-5 items-center bg-white md:px-9"></div>
       {/* section four */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 bg-Primary md:px-9 justify-items-center items-center md:p-3">
-        <div className="transition-transform hover:scale-105 duration-300">
-          <Image
-            src={"/images/logo1.svg"}
-            alt="logo 1"
-            height={25}
-            width={130}
-          />
-        </div>
-        <div className="transition-transform hover:scale-105 duration-300">
-          <Image
-            src={"/images/logo2.svg"}
-            alt="logo 1"
-            height={25}
-            width={130}
-          />
-        </div>
-        <div className="transition-transform hover:scale-105 duration-300">
-          <Image
-            src={"/images/logo3.svg"}
-            alt="logo 1"
-            height={25}
-            width={130}
-          />
-        </div>
-        <div className="transition-transform hover:scale-105 duration-300">
-          <Image
-            src={"/images/logo4.svg"}
-            alt="logo 1"
-            height={25}
-            width={130}
-          />
-        </div>
-        <div className="transition-transform hover:scale-105 duration-300">
-          <Image
-            src={"/images/logo5.svg"}
-            alt="logo 1"
-            height={25}
-            width={130}
-          />
-        </div>
-        <div className="transition-transform hover:scale-105 duration-300">
-          <Image
-            src={"/images/logo6.svg"}
-            alt="logo 1"
-            height={25}
-            width={130}
-          />
-        </div>
-      </div>
+     < Logos/>
       {/* Section five */}
       <div className="flex justify-center py-6 bg-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7   md:p-11 px-4">

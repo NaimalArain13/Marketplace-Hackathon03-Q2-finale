@@ -15,7 +15,7 @@ function Banner() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change image every 2 seconds
+    }, 4000); // Change image every 2 seconds
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [images.length]);
