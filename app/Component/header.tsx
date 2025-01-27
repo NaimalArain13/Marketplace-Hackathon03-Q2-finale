@@ -4,9 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
 import { PiShoppingCartSimpleThin } from "react-icons/pi";
-import { IoIosSearch } from "react-icons/io";
 import { UserPen } from "lucide-react";
-
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useCart } from "../context/cartContext";
 

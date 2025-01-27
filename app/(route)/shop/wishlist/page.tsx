@@ -18,7 +18,7 @@ const { wishlist, clearWishlist } = useCart();
     <TopSection />
     <Navbar />
     <div className="max-w-7xl w-full mx-auto p-7">
-      <BreadCrumb route1={"Wishlist"}/>
+      <BreadCrumb route1Link={"/shop/wishlist"} route1={"Wishlist"}/>
       <div className="flex justify-between items-center py-4">
         <h1 className="font-medium text-xl">Wishlist</h1>
        <Button
