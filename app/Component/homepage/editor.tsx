@@ -21,7 +21,7 @@ function Editor() {
   }, []);
   
   const images=product?.map((p)=>p.imageUrl)
-    console.log("images",images)
+  
   return (
     <div className="mx-auto w-full h-auto max-w-7xl md:py-12">
       <div className="py-4 flex items-center justify-center flex-col">

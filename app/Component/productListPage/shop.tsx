@@ -24,9 +24,7 @@ function Shop() {
   if (loader) {
     return <LoadingAnimation />;
   }
-  console.log(product);
   const images = product?.map((p) => p.imageUrl);
-  console.log("images", images);
 
   // Calculate the current items to display
   const indexOfLastItem = currentPage * itemsPerPage;

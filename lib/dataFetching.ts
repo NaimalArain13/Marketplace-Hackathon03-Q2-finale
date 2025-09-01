@@ -44,8 +44,6 @@ async function DataFetching() {
         sku,
         "imageUrl": image.asset->url
       }`)
-    console.log("length", response.length)
-    console.log("THIS IS RESPONSE" , response)
  return response
 }
 

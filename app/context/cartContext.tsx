@@ -47,7 +47,6 @@ function CartProvider({ children }: CartProviderProps) {
     }
     return [];
   });
-  console.log(totalamount);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -62,10 +61,7 @@ function CartProvider({ children }: CartProviderProps) {
   //     setCart(JSON.parse(storedCart));
   //   }
   // }, []);
-  useEffect(() => {
-    console.log("Updated cart:", cart);
-  }, [cart]); // This will log the cart whenever it changes.
-
+ 
   //calculate total
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -74,7 +70,6 @@ function CartProvider({ children }: CartProviderProps) {
 
   // add to cart
   const addToCart = (product: Cart) => {
-    console.log("Adding to cart:", product);
     setCart((prevItem) => {
       const existingItem = prevItem.find((item) => item._id === product._id);
       if (existingItem) {
@@ -84,10 +79,8 @@ function CartProvider({ children }: CartProviderProps) {
             : item
         );
       }
-      console.log("Adding new product to cart:", product.name);
       return [...prevItem, { ...product, quantity: 1 }];
     });
-    console.log("Updated cart:", cart);
   };
 
   //remove from cart
@@ -166,7 +159,6 @@ function useCart() {
   if (!context) {
     throw new Error("useCart must be used within a cartProvider");
   }
-  console.log(context);
   return context;
 }
 export { cartContext, useCart };

@@ -8,16 +8,13 @@ import { Cart } from '@/app/context/cartContext';
 
 async function ProductDetails({params}:{params:{id:string}}) {
  const data: Cart[] = await DataFetching();
-  console.log("Fetched data:", data);
 
   // Log all IDs in the data array for debugging
   const ids = data.map((p) => String(p._id));
-  console.log("Available IDs:", ids);
 
   // Ensure both sides of the comparison are strings
   const matchId = data.find((p) => String(p._id) === params.id);
 
-  console.log("Matched data:", matchId);
   
   if (!matchId) {
     console.error("No matching product found for the provided ID.");

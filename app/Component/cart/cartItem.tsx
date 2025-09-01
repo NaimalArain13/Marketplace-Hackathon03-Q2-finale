@@ -19,8 +19,6 @@ export default function CartTable() {
   if (!isClient) {
     return null; // Or return a loading state if needed
   }
-
-  console.log("this is cart from cartItem component", cart);
  
 
   return (

@@ -23,13 +23,11 @@ const client = createClient({
 
 async function uploadImageToSanity(imageUrl) {
   try {
-    console.log(`Uploading image: ${imageUrl}`)
     const response = await axios.get(imageUrl, { responseType: 'arraybuffer' })
     const buffer = Buffer.from(response.data)
     const asset = await client.assets.upload('image', buffer, {
       filename: imageUrl.split('/').pop()
     })
-    console.log(`Image uploaded successfully: ${asset._id}`)
     return asset._id
   } catch (error) {
     console.error('Failed to upload image:', imageUrl, error)
@@ -38,14 +36,10 @@ async function uploadImageToSanity(imageUrl) {
 }
 async function importData() {
   try {
-    console.log('Fetching products from API...')
-    console.log("api endpoint", process.env.NEXT_PUBLIC_API_ENDPOINT)
     const response = await axios.get(process.env.NEXT_PUBLIC_API_ENDPOINT)
     const products = response.data.slice(0,20)
   
-    console.log(`Fetched ${products.length} products`)
     for (const product of products) {
-      console.log(`Processing product: ${product.title}`)
       let imageRef = null
       if (product.image) {
         imageRef = await uploadImageToSanity(product.image)
@@ -78,11 +72,8 @@ async function importData() {
           },
         } : undefined,
       }
-      console.log('Uploading product to Sanity:', sanityProduct.name)
       const result = await client.create(sanityProduct)
-      console.log(`Product uploaded successfully: ${result._id}`)
     }
-    console.log('Data import completed successfully!')
   } catch (error) {
     console.error('Error importing data:', error)
   }

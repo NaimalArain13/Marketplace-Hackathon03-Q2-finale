@@ -12,7 +12,6 @@ import Navbar from "@/app/Component/header";
 
 export default function WishListPage() {
 const { wishlist, clearWishlist } = useCart();
-  console.log("this is wishlist from wishlistItem component", wishlist);
   return (
     <>
     <TopSection />
